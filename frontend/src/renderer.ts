@@ -11,9 +11,15 @@
  *
  * https://electronjs.org/docs/tutorial/security
  */
-
+import { createApp } from 'vue';
+import { createPinia } from 'pinia'
+import { router } from "./router";
+import App from './App.vue';
 import './index.css';
 
 console.log(
   '👋 This message is being logged by the renderer process, included via Vite',
 );
+
+const pinia = createPinia()
+createApp(App).use(router).use(pinia).mount('#app');
