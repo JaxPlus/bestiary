@@ -41,7 +41,7 @@
   --focus-ring: #A3B18A;
 }
 
-@theme inline {
+@theme {
   --color-background: var(--background);
   --color-surface: var(--surface);
   --color-surface-raised: var(--surface-raised);
@@ -76,7 +76,6 @@
 
 
 body {
-  font-family:
-    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
-    sans-serif;
+  color: var(--foreground);
+  font-family: Playfair Display, Arial, sans-serif;
 }

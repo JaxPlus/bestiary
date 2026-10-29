@@ -2,5 +2,5 @@
 </script>
 
 <template>
-    <h1>Hellowe</h1>
+    <RouterView />
 </template>

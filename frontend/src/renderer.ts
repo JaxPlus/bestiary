@@ -13,13 +13,23 @@
  */
 import { createApp } from 'vue';
 import { createPinia } from 'pinia'
-import { router } from "./router";
 import App from './App.vue';
 import './index.css';
+import MainPage from "./views/MainPage.vue";
+import { createMemoryHistory, createRouter } from "vue-router";
 
 console.log(
   '👋 This message is being logged by the renderer process, included via Vite',
-);
+)
+
+const routes = [
+    { path: '/', component: MainPage },
+]
+
+export const router = createRouter({
+    history: createMemoryHistory(),
+    routes,
+})
 
 const pinia = createPinia()
 createApp(App).use(router).use(pinia).mount('#app');
