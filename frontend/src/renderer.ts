@@ -17,6 +17,8 @@ import App from './App.vue';
 import './index.css';
 import MainPage from "./views/MainPage.vue";
 import { createMemoryHistory, createRouter } from "vue-router";
+import PublicBestiaries from "./views/PublicBestiaries.vue";
+import BestiaryPage from "./views/BestiaryPage.vue";
 
 console.log(
   '👋 This message is being logged by the renderer process, included via Vite',
@@ -24,6 +26,8 @@ console.log(
 
 const routes = [
     { path: '/', component: MainPage },
+    { path: '/public-bestiaries', component: PublicBestiaries },
+    { path: '/public-bestiaries/:id', component: BestiaryPage },
 ]
 
 export const router = createRouter({
