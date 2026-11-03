@@ -2,6 +2,7 @@
 
 import Navbar from "../components/Navbar.vue";
 import Monster from "../components/Monster.vue";
+
 </script>
 
 <template>
