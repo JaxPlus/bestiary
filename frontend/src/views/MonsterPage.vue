@@ -19,18 +19,22 @@ switch (useRoute().params.monsterId) {
 
 <template>
     <div>
-        <Navbar />
-        <h1>{{ monster.name }}</h1>
-        <div>
-            <div>
-                <p>First appearance: Chapter {{ monster.firstAppearance }}</p>
-                <p>Name meaning: None</p>
-
-            </div>
-            <div>
-                <p>Description: {{ monster.description }}</p>
-                <p>Physical appearance: {{ monster.physicalDescription }}</p>
-                <p>Behavior: lorem ipsum</p>
+        <Navbar :bestiary="useRoute().params.bestiaryId as string" />
+        <div class="flex flex-col justify-center items-center">
+            <h1 class="m-16 text-6xl">{{ monster.name }}</h1>
+            <div class="w-full p-8 grid grid-cols-2">
+                <div class="w-fit p-4 flex bg-surface rounded-lg">
+                    <div class="w-40 h-60 bg-primary rounded-lg"/>
+                    <div class="mx-4">
+                        <p>First appearance: Chapter {{ monster.firstAppearance }}</p>
+                        <p>Name meaning: None</p>
+                    </div>
+                </div>
+                <div class="p-4 ml-4">
+                    <p>Description: {{ monster.description }}</p>
+                    <p>Physical appearance: {{ monster.physicalDescription }}</p>
+                    <p>Behavior: lorem ipsum</p>
+                </div>
             </div>
         </div>
     </div>

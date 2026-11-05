@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import {useRouter} from "vue-router";
 
+const props = defineProps<{
+    bestiary?: string
+}>()
+
 const router = useRouter();
 </script>
 
@@ -10,6 +14,9 @@ const router = useRouter();
         <div>
             <RouterLink v-if="router.currentRoute.value.path != '/public-bestiaries'" class="mr-2" to="/public-bestiaries">
                 Public bestiaries
+            </RouterLink>
+            <RouterLink v-if="bestiary" class="mr-2" :to="'/public-bestiaries/' + bestiary">
+                {{ bestiary }}
             </RouterLink>
             <RouterLink v-if="router.currentRoute.value.path != '/'" to="/">
                 Main page
