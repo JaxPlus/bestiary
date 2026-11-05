@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import Navbar from "../components/Navbar.vue";
-import {useMonsterShop} from "../stores/MonsterShop";
+import {useMonsterStore} from "../stores/MonsterStore";
 import {useRoute} from "vue-router";
 import {MonsterI} from "../types/Monster";
 
-const store = useMonsterShop()
+const store = useMonsterStore()
 let monster: MonsterI
 
 switch (useRoute().params.monsterId) {

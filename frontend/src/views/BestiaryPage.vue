@@ -1,8 +1,9 @@
 <script setup lang="ts">
-
 import Navbar from "../components/Navbar.vue";
 import Monster from "../components/Monster.vue";
+import {useMonsterStore} from "../stores/MonsterStore";
 
+const store = useMonsterStore()
 </script>
 
 <template>
@@ -14,8 +15,8 @@ import Monster from "../components/Monster.vue";
 
             </div>
             <div class="grid grid-cols-4">
-                <Monster name="Noctia" />
-                <Monster name="Umbra Saeva" />
+                <Monster v-if="store.currentBestiary == 'Aqua Mundi'" name="Noctia" />
+                <Monster v-if="store.currentBestiary == 'Aqua Mundi'" name="Umbra Saeva" />
             </div>
         </div>
     </div>
