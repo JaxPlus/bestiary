@@ -23,7 +23,7 @@ switch (useRoute().params.monsterId) {
         <div class="flex flex-col justify-center items-center">
             <h1 class="m-16 text-6xl">{{ monster.name }}</h1>
             <div class="w-full p-8 grid grid-cols-2">
-                <div class="w-fit p-4 flex bg-surface rounded-lg">
+                <div class="max-w-4/5 p-4 flex bg-surface rounded-lg">
                     <div class="w-40 h-60 bg-primary rounded-lg"/>
                     <div class="mx-4">
                         <p>First appearance: Chapter {{ monster.firstAppearance }}</p>

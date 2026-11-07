@@ -7,6 +7,7 @@ export const useMonsterStore = defineStore('monsterShop', () => {
     const currentBestiary = ref<string>()
 
     const monster1 = ref<MonsterI>({
+        bestiary: "Aqua Mundi",
         name: "Noctia",
         firstAppearance: 6,
         description: "",
@@ -14,11 +15,14 @@ export const useMonsterStore = defineStore('monsterShop', () => {
     });
 
     const monster2 = ref<MonsterI>({
+        bestiary: "Aqua Mundi",
         name: "Umbra Saeva",
         firstAppearance: 7,
         description: "",
         physicalDescription: "",
     });
 
-    return { bestiaryList, currentBestiary, monster1, monster2 };
+    const monsterList = [monster1, monster2];
+
+    return { bestiaryList, currentBestiary, monster1, monster2, monsterList };
 })
