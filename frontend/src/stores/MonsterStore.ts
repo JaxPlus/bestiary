@@ -1,6 +1,6 @@
 import {defineStore} from "pinia";
 import {MonsterI} from "../types/Monster";
-import {ref} from "vue";
+import {Ref, ref} from "vue";
 import {BestiaryI} from "../types/Bestiary";
 
 export const useMonsterStore = defineStore('monsterShop', () => {
@@ -31,26 +31,26 @@ export const useMonsterStore = defineStore('monsterShop', () => {
         name: "Horror story",
         description: "House on a hill in village named Devar has some secrets.",
         tags: ["Fantasy", "Not magical", "Horror"],
-        monsters: [monster1.value, monster2.value],
+        monsters: [],
     });
 
     const bestiary3 = ref<BestiaryI>({
         name: "Future story",
         description: "TBA",
-        tags: [""],
-        monsters: [monster1.value, monster2.value],
+        tags: [],
+        monsters: [],
     });
 
     const bestiary4 = ref<BestiaryI>({
         name: "D&D Campaign",
         description: "TBA",
         tags: ["Fantasy", "Not magical"],
-        monsters: [monster1.value, monster2.value],
+        monsters: [],
     });
 
     const currentBestiary = ref<BestiaryI | undefined>();
     const monsterList = [monster1, monster2];
-    const bestiaryList = ref([bestiary1, bestiary2, bestiary3, bestiary4]);
+    const bestiaryList = ref<Ref<BestiaryI>[]>([bestiary1, bestiary2, bestiary3, bestiary4]);
 
     return { monster1, monster2, monsterList, bestiary1, bestiaryList, currentBestiary };
 })

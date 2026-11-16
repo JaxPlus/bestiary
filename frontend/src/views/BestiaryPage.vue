@@ -4,7 +4,7 @@ import Monster from "../components/Monster.vue";
 import {useMonsterStore} from "../stores/MonsterStore";
 import Tag from "../components/Tag.vue";
 
-const store = useMonsterStore()
+const store = useMonsterStore();
 </script>
 
 <template>
@@ -20,9 +20,11 @@ const store = useMonsterStore()
                         <Tag v-for="tag in store.currentBestiary?.tags">{{ tag }}</Tag>
                     </div>
                 </div>
-                <div class="grid grid-cols-4">
-                    <Monster v-if="store.currentBestiary?.name == 'Aqua Mundi'" name="Noctia" />
-                    <Monster v-if="store.currentBestiary?.name == 'Aqua Mundi'" name="Umbra Saeva" />
+                <div>
+                    <h2 class="text-4xl text-center">Monsters:</h2>
+                    <div class="grid grid-cols-4">
+                        <Monster v-for="monsterObj in store.currentBestiary?.monsters" :name="monsterObj.name" />
+                    </div>
                 </div>
             </div>
         </div>
