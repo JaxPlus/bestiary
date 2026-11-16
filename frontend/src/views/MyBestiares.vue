@@ -7,24 +7,24 @@ import Fuse from "fuse.js";
 
 const query = ref("");
 const store = useMonsterStore();
-const fuse = computed(() => new Fuse(store.bestiaryList, {
+const fuse = computed(() => new Fuse(store.bestiaryList.map(value => value.value.name), {
     threshold: 0.4,
     ignoreLocation: true,
     ignoreDiacritics: true,
-}))
+}));
 
 const filteredItems = computed(() => {
     const q = query.value.trim()
-    if (!q) return store.bestiaryList
+    if (!q) return store.bestiaryList.map(value => value.value.name)
     return fuse.value.search(q).map(result => result.item)
-})
+});
 </script>
 
 <template>
     <div>
         <Navbar />
         <div class="flex flex-col justify-center items-center">
-            <h1 class="m-16 text-6xl">Public Bestiaries</h1>
+            <h1 class="m-16 text-6xl">My Bestiaries</h1>
             <div class="w-full flex flex-col items-center">
                 <div class="flex justify-between w-4/5 bg-surface p-4 rounded-lg">
                     <input v-model="query" class="w-full" type="text" placeholder="Search..." />
@@ -35,7 +35,7 @@ const filteredItems = computed(() => {
                 </div>
             </div>
             <div class="w-4/5 mt-8 grid grid-cols-3 md:grid-cols-4">
-                <Bestiary v-for="bestiaryTitle in filteredItems" @click="store.currentBestiary = bestiaryTitle" :title="bestiaryTitle" author="Jan Greń" />
+            <Bestiary v-for="bestiaryTitle in filteredItems" @click="store.currentBestiary = store.bestiaryList.find(value => value.value.name == bestiaryTitle)?.value" :title="bestiaryTitle" author="Jan Greń" />
             </div>
         </div>
     </div>

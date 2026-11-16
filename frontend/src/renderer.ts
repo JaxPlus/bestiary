@@ -17,15 +17,15 @@ import App from './App.vue';
 import './index.css';
 import MainPage from "./views/MainPage.vue";
 import { createMemoryHistory, createRouter } from "vue-router";
-import PublicBestiaries from "./views/PublicBestiaries.vue";
+import MyBestiares from "./views/MyBestiares.vue";
 import BestiaryPage from "./views/BestiaryPage.vue";
 import MonsterPage from "./views/MonsterPage.vue";
 
 const routes = [
     { path: '/', component: MainPage },
-    { path: '/public-bestiaries', component: PublicBestiaries },
-    { path: '/public-bestiaries/:bestiaryId', component: BestiaryPage },
-    { path: '/public-bestiaries/:bestiaryId/:monsterId', component: MonsterPage },
+    { path: '/my-bestiaries', component: MyBestiares },
+    { path: '/my-bestiaries/:bestiaryId', component: BestiaryPage },
+    { path: '/my-bestiaries/:bestiaryId/:monsterId', component: MonsterPage },
 ]
 
 export const router = createRouter({

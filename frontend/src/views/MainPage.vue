@@ -10,8 +10,8 @@ import Navbar from "../components/Navbar.vue";
         <h2 class="text-4xl">Create your own</h2>
         <h1 class="text-8xl mb-6">Bestiary</h1>
         <div>
-            <UIButton class="mr-4" route="/public-bestiaries" variant="secondary">Check public bestiaries</UIButton>
-            <UIButton route="/" variant="primary">Create your own</UIButton>
+            <UIButton class="mr-4" route="/my-bestiaries" variant="secondary">Check my bestiaries</UIButton>
+            <UIButton route="/" variant="primary">Create new bestiary</UIButton>
         </div>
     </div>
 </template>
