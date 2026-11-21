@@ -23,7 +23,7 @@ export const useMonsterStore = defineStore('monsterShop', () => {
     const bestiary1 = ref<BestiaryI>({
         name: "Aqua Mundi",
         description: "In a world full of water beasts will you survive.",
-        tags: ["Fantasy", "Not magical"],
+        tags: ["Fantasy", "Not magical", "Adventure"],
         monsters: [monster1.value, monster2.value],
     });
 
@@ -44,7 +44,7 @@ export const useMonsterStore = defineStore('monsterShop', () => {
     const bestiary4 = ref<BestiaryI>({
         name: "D&D Campaign",
         description: "TBA",
-        tags: ["Fantasy", "Not magical"],
+        tags: ["Fantasy", "Not magical", "Adventure"],
         monsters: [],
     });
 

@@ -6,7 +6,7 @@ const props = defineProps<{
 </script>
 
 <template>
-    <button v-if="variant == 'primary'" class="p-3 rounded-lg bg-primary cursor-pointer">
+    <button v-if="variant == 'primary'" class="p-3 rounded-lg bg-accent cursor-pointer">
         <RouterLink :to="route"><slot /></RouterLink>
     </button>
     <button v-else class="p-3 rounded-lg border-border border-2 cursor-pointer">

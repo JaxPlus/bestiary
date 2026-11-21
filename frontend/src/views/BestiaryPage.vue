@@ -15,14 +15,14 @@ const store = useMonsterStore();
             <div class="w-full grid grid-cols-2">
                 <div class="flex flex-col m-4 p-4 bg-surface rounded-lg">
                     <p class="mb-2">{{ store.currentBestiary?.description }}</p>
-                    <div class="flex items-center">
-                        <p class="pr-4">Tags:</p>
+                    <div class="flex">
+                        <p class="pr-4 self-center">Tags:</p>
                         <Tag v-for="tag in store.currentBestiary?.tags">{{ tag }}</Tag>
                     </div>
                 </div>
                 <div>
                     <h2 class="text-4xl text-center">Monsters:</h2>
-                    <div class="grid grid-cols-4">
+                    <div class="grid grid-cols-2 md:grid-cols-3">
                         <Monster v-for="monsterObj in store.currentBestiary?.monsters" :name="monsterObj.name" />
                     </div>
                 </div>
