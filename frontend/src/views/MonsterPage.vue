@@ -3,6 +3,8 @@ import Navbar from "../components/Navbar.vue";
 import {useMonsterStore} from "../stores/MonsterStore";
 import {useRoute} from "vue-router";
 import {MonsterI} from "../types/Monster";
+import Section from "../components/Section.vue";
+import Cover from "../components/Cover.vue";
 
 const store = useMonsterStore()
 let monster: MonsterI
@@ -21,19 +23,21 @@ switch (useRoute().params.monsterId) {
     <div>
         <Navbar :bestiary="useRoute().params.bestiaryId as string" />
         <div class="flex flex-col justify-center items-center">
-            <h1 class="m-16 text-6xl">{{ monster.name }}</h1>
-            <div class="w-full p-8 grid grid-cols-2">
-                <div class="max-w-4/5 p-4 flex bg-surface rounded-lg">
-                    <div class="w-40 h-60 bg-primary rounded-lg"/>
-                    <div class="mx-4">
-                        <p>First appearance: Chapter {{ monster.firstAppearance }}</p>
-                        <p>Name meaning: None</p>
+            <div class="w-full p-8">
+                <div class="p-4 bg-surface rounded-lg">
+                    <div class="flex">
+                        <Cover :letter="monster.name[0]" />
+                        <h1 class="self-center m-8 text-6xl">{{ monster.name }}</h1>
+                    </div>
+                    <div class="mt-4 flex">
+                        <p class="mr-4">First appearance: Chapter {{ monster.firstAppearance }}</p>
                     </div>
                 </div>
-                <div class="p-4 ml-4">
-                    <p>Description: {{ monster.description }}</p>
-                    <p>Physical appearance: {{ monster.physicalDescription }}</p>
-                    <p>Behavior: lorem ipsum</p>
+                <div>
+                    <Section title="Description">{{ monster.description }}</Section>
+                    <Section title="Physical appearance">{{ monster.physicalDescription }}</Section>
+                    <Section title="Behavior">lorem ipsum</Section>
+                    <Section title="Name meaning">None</Section>
                 </div>
             </div>
         </div>
