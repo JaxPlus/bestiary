@@ -12,7 +12,7 @@ const store = useMonsterStore();
         <Navbar />
         <div class="flex flex-col justify-center items-center">
             <h1 class="m-16 text-6xl">{{ $route.params.bestiaryId }}</h1>
-            <div class="w-full grid grid-cols-2">
+            <div class="w-full grid grid-cols-1 md:grid-cols-2">
                 <div class="flex flex-col m-4 p-4 bg-surface rounded-lg">
                     <p class="mb-2">{{ store.currentBestiary?.description }}</p>
                     <div class="flex">
@@ -22,7 +22,7 @@ const store = useMonsterStore();
                 </div>
                 <div>
                     <h2 class="text-4xl text-center">Monsters:</h2>
-                    <div class="grid grid-cols-2 md:grid-cols-3">
+                    <div class="grid grid-cols-3">
                         <Monster v-for="monsterObj in store.currentBestiary?.monsters" :name="monsterObj.name" />
                     </div>
                 </div>
