@@ -34,10 +34,10 @@ switch (useRoute().params.monsterId) {
                     </div>
                 </div>
                 <div>
+                    <Section title="Images">{{ monster.images.length > 0 ? monster.images : "No images" }}</Section>
                     <Section title="Description">{{ monster.description }}</Section>
                     <Section title="Physical appearance">{{ monster.physicalDescription }}</Section>
-                    <Section title="Behavior">lorem ipsum</Section>
-                    <Section title="Name meaning">None</Section>
+                    <Section title="Name meaning">{{ monster.nameMeaning }}</Section>
                 </div>
             </div>
         </div>

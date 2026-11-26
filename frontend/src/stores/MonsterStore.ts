@@ -7,22 +7,26 @@ export const useMonsterStore = defineStore('monsterShop', () => {
     const monster1 = ref<MonsterI>({
         bestiary: "Aqua Mundi",
         name: "Noctia",
+        images: [],
         firstAppearance: 6,
-        description: "",
-        physicalDescription: "",
+        description: "Long lost sister of the Guild Master Valeria seeks revenge of the one that turned her into monstrosity.",
+        physicalDescription: "Water beast with upper half human, lower half being tentacles. Those stretch through the labyrinth of cave system under city Ad-Ash.",
+        nameMeaning: "Something close to Night in Latin.",
     });
 
     const monster2 = ref<MonsterI>({
         bestiary: "Aqua Mundi",
         name: "Umbra Saeva",
+        images: [],
         firstAppearance: 7,
-        description: "",
-        physicalDescription: "",
+        description: "One of 4 Generals created by the monster that coused Tenebrarum Month.",
+        physicalDescription: "He wears a belt with skulls of his fallen allies, but only those who were respected by him and even after their death he carries their will.",
+        nameMeaning: "Cruel Shadow.",
     });
 
     const bestiary1 = ref<BestiaryI>({
         name: "Aqua Mundi",
-        description: "In a world full of water beasts will you survive.",
+        description: "In a world devastated by event call Tenebrarum Month that filled it with terrifying water beasts will you survive.",
         tags: ["Fantasy", "Not magical", "Adventure"],
         monsters: [monster1.value, monster2.value],
     });
