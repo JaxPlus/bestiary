@@ -9,7 +9,7 @@ const router = useRouter();
 </script>
 <template>
     <nav class="bg-surface w-full p-4 flex justify-between top-0 left-0">
-        <RouterLink to="/">IKONA</RouterLink>
+        <RouterLink to="/">ICON</RouterLink>
         <div>
             <RouterLink v-if="router.currentRoute.value.path != '/'" to="/">
                 Main page
